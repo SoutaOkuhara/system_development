@@ -20,6 +20,44 @@ db.settings({
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
         document.querySelector('.login').innerHTML = "<div class='login_userInfo'><button class='btn btn-outline-danger' id='logout'>ログアウトする</button><p>" + user.displayName + "さんとしてログインしています</p>" + "<p>メールアドレス：" + user.email + "</p></div>";
+        //Userテーブルに追加されているかの確認
+        (async () => {
+            try {
+            // 省略 
+            // (Cloud Firestoreのインスタンスを初期化してdbにセット)
+            var existing = 0;
+            const querySnapshot = await db.collection('user').get() // firebase.firestore.QuerySnapshotのインスタンスを取得
+            console.log(querySnapshot.docs.map(postDoc => postDoc.id))
+            querySnapshot.forEach((postDoc) => {
+                if(postDoc.id == user.uid){
+                console.log('既に存在しています。');
+                existing = 1;
+                }else{
+                console.log('存在していません。');
+                }
+            });
+
+            if(existing == 0){
+                //DBに値を追加
+                const userRef = db.collection('user').doc(user.uid);
+                console.log(userRef);
+                userRef.set({
+                    Name:user.displayName,
+                })
+                .then(function(docRef) {
+                console.log("collect");
+                })
+                .catch(function(error) {
+                console.error("Error adding document: ", error);
+                });
+            }else{
+
+            };
+
+            } catch (err) {
+            console.log(`Error: ${JSON.stringify(err)}`);
+            }
+            })();
     }else{
         var uiConfig = {
         signInSuccessUrl:'index.html',

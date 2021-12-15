@@ -1,0 +1,29 @@
+header {
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0;
+  background: #dcdcdc;
+  padding: 2% 0;
+  font-family: 'Readex Pro', sans-serif; }
+
+.privacyPolicy .back {
+  text-align: center;
+  margin-top: 20px; }
+.privacyPolicy_article {
+  margin: 5%; }
+.privacyPolicy_title {
+  font-size: 30px;
+  text-align: center;
+  margin: 5%; }
+.privacyPolicy_heading {
+  font-size: 25px;
+  border-bottom: 2px dotted #666; }
+.privacyPolicy_content {
+  font-size: 15px; }
+.privacyPolicy ol {
+  margin: 20px 0; }
+.privacyPolicy_end {
+  text-align: right;
+  font-size: 15px; }
+
+/*# sourceMappingURL=article.css.map */

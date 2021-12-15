@@ -15,7 +15,12 @@ header {
     background: rgba(144, 238, 144, 0.6);
     border: 2px #666 solid; }
   .login_userInfo {
-    font-size: 15px; }
+    font-size: 15px;
+    position: relative; }
+    .login_userInfo button {
+      position: absolute;
+      left: 0;
+      margin-left: 5%; }
   .login a {
     color: #666;
     font-size: 15px; }
@@ -51,6 +56,9 @@ header {
   .func_content p {
     font-size: 12px;
     pointer-events: none; }
+  .func_content a {
+    text-decoration: none;
+    color: #666; }
 
 .modal {
   display: none;

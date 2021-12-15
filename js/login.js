@@ -19,7 +19,7 @@ db.settings({
 
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
-        document.querySelector('.login').innerHTML = "<div class='login_userInfo'><p>" + user.displayName + "さんとしてログインしています</p>" + "<p>メールアドレス：" + user.email + "</p></div>";
+        document.querySelector('.login').innerHTML = "<div class='login_userInfo'><button class='btn btn-outline-danger' id='logout'>ログアウトする</button><p>" + user.displayName + "さんとしてログインしています</p>" + "<p>メールアドレス：" + user.email + "</p></div>";
     }else{
         var uiConfig = {
         signInSuccessUrl:'index.html',
@@ -41,24 +41,26 @@ db.settings({
 });
 
 //ログアウト
-document.getElementById('aaa').onclick = function(){
-    var res = window.confirm("本当にログアウトしますか？");
-    if( res ) {
-        firebase.auth().onAuthStateChanged(user => {
-            firebase
-            .auth()
-            .signOut()
-            .then(() => {
-                console.log('ログアウトしました');
-                setTimeout("location.reload()",500);
-            })
-            .catch((error) => {
-                console.log(`ログアウト時にエラーが発生しました (${error})`);
+$(function(){
+    $(document).on('click','#logout',function(){
+        var res = window.confirm("本当にログアウトしますか？");
+        if( res ) {
+            firebase.auth().onAuthStateChanged(user => {
+                firebase
+                .auth()
+                .signOut()
+                .then(() => {
+                    console.log('ログアウトしました');
+                    setTimeout("location.reload()",500);
+                })
+                .catch((error) => {
+                    console.log(`ログアウト時にエラーが発生しました (${error})`);
+                });
             });
-        });
-    }
-    else {
-        // キャンセルならアラートボックスを表示
-        alert("ログアウトをキャンセルしました。");
-    }
-}
+        }
+        else {
+            // キャンセルならアラートボックスを表示
+            alert("ログアウトをキャンセルしました。");
+        }
+    });
+});

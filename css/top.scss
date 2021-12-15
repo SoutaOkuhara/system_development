@@ -21,6 +21,13 @@ header{
 
     &_userInfo{
         font-size: 15px;
+        position: relative; 
+
+        button{
+            position: absolute;  // 追記
+            left: 0;  
+            margin-left: 5%;
+        }
     }
 
     a{
@@ -45,6 +52,7 @@ header{
             transform: translateY(-10px);
             transition-duration: 0.5s;
         }
+
     }
 
     &_content{
@@ -70,6 +78,11 @@ header{
         p{
             font-size: 12px;
             pointer-events: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: #666;
         }
     }
     

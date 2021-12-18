@@ -39,6 +39,7 @@ header{
     }
 }
 
+
 #zoom{
     text-align: center;
     padding-top: 2%;
@@ -63,6 +64,11 @@ header{
     th{
         font-size: 15px;
         width: 300px;
+        font-weight: 300;
+    }
+
+    span{
+        font-weight: 600;
     }
 
     &_tag{

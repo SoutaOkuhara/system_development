@@ -47,6 +47,72 @@
     </div>
     <div id="zoom">
         <h1>ZoomURL一覧</h1>
+        <button type="button" class="btn btn-outline-secondary js-modal-open1">編集する</button>
+        <!-- モーダルウィンドウ内容 -->
+        <div class="modal js-modal1">
+            <div class="modal__bg js-modal-close1"></div>
+            <div class="modal__content">
+                <h2>ZoomURL編集</h2>
+                <form action="zoomURL.html" method="POST">
+                <div class="edit">
+                    <label for="">曜日:</label>
+                    <span class="badge badge-danger">必須</span>
+                    <select id="week">
+                        <option value="">曜日を選択する</option>
+                        <option value="Monday">月曜日</option>
+                        <option value="Tuesday">火曜日</option>
+                        <option value="Wednesday">水曜日</option>
+                        <option value="Thursday">木曜日</option>
+                        <option value="Friday">金曜日</option>
+                        <option value="Saturday">土曜日</option>
+                    </select>
+                </div>
+                <br>
+                <div class="edit">
+                    <label for="">時間:</label>
+                    <span class="badge badge-danger">必須</span>
+                    <select id="time">
+                        <option value="">時間を選択する</option>
+                        <option value="one">1時間目</option>
+                        <option value="two">2時間目</option>
+                        <option value="three">3時間目</option>
+                        <option value="four">4時間目</option>
+                        <option value="five">5時間目</option>
+                        <option value="six">6時間目</option>
+                        <option value="seven">7時間目</option>
+                        <option value="eight">8時間目</option>
+                    </select>
+                </div>
+                <br>
+                <div class="edit">
+                    <label for="">新しいZoomURL:</label>
+                    <input type="text" name="" id="zoomURL_input">
+                    <p>*URLはフルパスで入力してください</p>
+                </div>
+                <div class="edit">
+                    <label for="">新しいZoomパスワード:</label>
+                    <input type="text" name="" id="Pass_input">
+                </div>
+                <br>
+                <div class="edit">
+                    <label for="">科目:</label>
+                    <input type="text" name="" id="subject_input">       
+                </div>
+                </form>
+                <br>
+                <div id="getWeekAlert">
+                    <!-- 曜日未記入時の際のアラートを表示 -->
+                </div>
+                <div id="getTimeAlert">
+                    <!-- 時間未記入時の際のアラートを表示 -->
+                </div>
+                <div id="collectAlert">
+                    <!-- 編集完了のAlert -->
+                </div>
+                <button type="submit" class="btn btn-success" onclick="ZoomURLUpdate()">送信する</button>
+                <a class="js-modal-close1" href=""><button class="btn btn-outline-info">閉じる</button></a>
+            </div>
+        </div>  
         <div id="zoom_tag">
             <a href="#timetable_Monday">月曜</a>
             <a href="#timetable_Tuesday">火曜</a>
@@ -55,22 +121,22 @@
             <a href="#timetable_Friday">金曜</a>
             <a href="#timetable_Saturday">土曜</a>
         </div>
-        <div id="timetable_Monday">
+        <div id="timetable_Monday" class="timetable">
             <!-- 月曜日のDB情報 -->
         </div>
-        <div id="timetable_Tuesday">
+        <div id="timetable_Tuesday" class="timetable">
             <!-- 火曜日のDB情報 -->
         </div>
-        <div id="timetable_Wednesday">
+        <div id="timetable_Wednesday" class="timetable">
             <!-- 水曜日のDB情報 -->
         </div>
-        <div id="timetable_Thursday">
+        <div id="timetable_Thursday" class="timetable">
             <!-- 木曜日のDB情報 -->
         </div>
-        <div id="timetable_Friday">
+        <div id="timetable_Friday" class="timetable">
             <!-- 金曜日のDB情報 -->
         </div>
-        <div id="timetable_Saturday">
+        <div id="timetable_Saturday" class="timetable">
             <!-- 土曜日のDB情報 -->
         </div>
     </div>
@@ -93,8 +159,8 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="../js/login.js"></script>
-    <script src="../js/modal.js"></script>
     <script src="../js/zoomURL.js"></script>
+    <script src="../js/modal.js"></script>
     <script>
   firebase.auth().onAuthStateChanged(user => {
     if (user) {

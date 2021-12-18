@@ -37,16 +37,32 @@ header {
   padding-right: 20%; }
   #zoom h1 {
     margin: 3%; }
+  #zoom button {
+    width: 100px;
+    height: 30px;
+    margin: 0 20px;
+    font-size: 15px; }
   #zoom .month {
     font-size: 20px; }
   #zoom th {
     font-size: 15px;
-    width: 100px; }
+    width: 300px; }
   #zoom_tag {
     margin: 5% 0; }
     #zoom_tag a {
       font-size: 15px;
       margin: 0 20px; }
+  #zoom .timetable {
+    margin: 5% 0; }
+  #zoom .js-modal1 {
+    font-size: 15px; }
+    #zoom .js-modal1 h2 {
+      font-size: 20px;
+      margin: 10px 0; }
+    #zoom .js-modal1 .edit {
+      margin: 10px 0; }
+    #zoom .js-modal1 #zoomURL_input {
+      width: 300px; }
 
 .modal {
   display: none;

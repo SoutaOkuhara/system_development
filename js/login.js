@@ -40,7 +40,19 @@ db.settings({
             if(existing == 0){
                 //DBに値を追加
                 const userRef = db.collection('user').doc(user.uid);
-                console.log(userRef);
+                let week = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+                let timetable = ['one','two','three','four','five','six','seven','eight'];
+                console.log(week[1]);
+                for(let j = 0; j < week.length;j++){
+                    for(let i = 0; i < 8;i++){
+                        const zoomURLRef = db.collection('zoomURL').doc(user.uid).collection(week[j]).doc(timetable[i]);
+                        zoomURLRef.set({
+                            URL:'未入力',
+                            Pass:'未入力',
+                            Subject:'未入力'
+                        })
+                    }
+                }
                 userRef.set({
                     Name:user.displayName,
                 })
@@ -60,7 +72,7 @@ db.settings({
             })();
     }else{
         var uiConfig = {
-        signInSuccessUrl:'index.html',
+        signInSuccessUrl:'zoomURL.html',
         // 利用する認証機能
         signInOptions: [{
             provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,  //メール認証

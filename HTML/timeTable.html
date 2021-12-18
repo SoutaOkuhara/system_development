@@ -46,15 +46,22 @@
         </div>    
     </div>
     <div id="zoom">
-        <h1>ZoomURL一覧</h1>
+        <h1>時間割</h1>
         <button type="button" class="btn btn-success js-modal-open1">編集する</button>
         <a href="../index.html"><button class="btn btn-outline-info">TOPへ戻る</button></a>
+        <div id="zoom_tag">
+            <a href="#timetable_Monday">月曜</a>
+            <a href="#timetable_Tuesday">火曜</a>
+            <a href="#timetable_Wednesday">水曜</a>
+            <a href="#timetable_Thursday">木曜</a>
+            <a href="#timetable_Friday">金曜</a>
+            <a href="#timetable_Saturday">土曜</a>
+        </div>
         <!-- モーダルウィンドウ内容 -->
         <div class="modal js-modal1">
             <div class="modal__bg js-modal-close1"></div>
             <div class="modal__content">
-                <h2>ZoomURL編集</h2>
-                <form action="zoomURL.html" method="POST">
+                <h2>時間割編集</h2>
                 <div class="edit">
                     <label for="">曜日:</label>
                     <span class="badge badge-danger">必須</span>
@@ -86,22 +93,23 @@
                 </div>
                 <br>
                 <div class="edit">
-                    <label for="">新しいZoomURL:</label>
-                    <input type="text" name="" id="zoomURL_input">
-                    <p>*URLはフルパスで入力してください</p>
-                </div>
-                <br>
-                <div class="edit">
-                    <label for="">新しいZoomパスワード:</label>
-                    <input type="text" name="" id="Pass_input">
-                </div>
-                <br>
-                <div class="edit">
                     <label for="">科目:</label>
                     <input type="text" name="" id="subject_input">       
                 </div>
-                </form>
                 <br>
+                <div class="edit">
+                        <label for="">担当教諭:</label>
+                        <input type="text" name="" id="Teacher_input">
+                </div>
+                <br>
+                <div class="edit">
+                    <label for="">教室:</label>
+                    <input type="text" name="" id="ClassRoom_input">
+                </div>
+                <div class="edit">
+                    <label for="">Memo:</label>
+                    <input type="text" name="" id="Memo_input">
+                </div>
                 <div id="getWeekAlert">
                     <!-- 曜日未記入時の際のアラートを表示 -->
                 </div>
@@ -111,18 +119,10 @@
                 <div id="collectAlert">
                     <!-- 編集完了のAlert -->
                 </div>
-                <button type="submit" class="btn btn-success" onclick="ZoomURLUpdate()">送信する</button>
+                <button type="submit" class="btn btn-success" onclick="TimetableUpdate()">送信する</button>
                 <a class="js-modal-close1" href=""><button class="btn btn-outline-info">閉じる</button></a>
             </div>
         </div>  
-        <div id="zoom_tag">
-            <a href="#timetable_Monday">月曜</a>
-            <a href="#timetable_Tuesday">火曜</a>
-            <a href="#timetable_Wednesday">水曜</a>
-            <a href="#timetable_Thursday">木曜</a>
-            <a href="#timetable_Friday">金曜</a>
-            <a href="#timetable_Saturday">土曜</a>
-        </div>
         <div id="timetable_Monday" class="timetable">
             <!-- 月曜日のDB情報 -->
         </div>
@@ -161,7 +161,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="../js/login.js"></script>
-    <script src="../js/zoomURL.js"></script>
+    <script src="../js/timeTable.js"></script>
     <script src="../js/modal.js"></script>
     <script>
   firebase.auth().onAuthStateChanged(user => {

@@ -50,7 +50,14 @@ db.settings({
                             URL:'未入力',
                             Pass:'未入力',
                             Subject:'未入力'
-                        })
+                        });
+                        const TimetableRef = db.collection('Timetable').doc(user.uid).collection(week[j]).doc(timetable[i]);
+                        TimetableRef.set({
+                            Subject:'未入力',
+                            Classroom:'未入力',
+                            Teacher:'未入力',
+                            memo:'未入力'
+                        });
                     }
                 }
                 userRef.set({

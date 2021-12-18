@@ -46,7 +46,10 @@ header {
     font-size: 20px; }
   #zoom th {
     font-size: 15px;
-    width: 300px; }
+    width: 300px;
+    font-weight: 300; }
+  #zoom span {
+    font-weight: 600; }
   #zoom_tag {
     margin: 5% 0; }
     #zoom_tag a {

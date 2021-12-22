@@ -58,6 +58,13 @@ db.settings({
                             Teacher:'未入力',
                             memo:'未入力'
                         });
+                        const HomeworkRef = db.collection('Homework').doc(user.uid).collection(week[j]).doc(timetable[i]);
+                        HomeworkRef.set({
+                            Content:'未入力',
+                            checkbox:'未入力',
+                            submission_period:'未入力',
+                            priority:'未入力'
+                        });
                     }
                 }
                 userRef.set({

@@ -42,6 +42,7 @@ db.settings({
                 const userRef = db.collection('user').doc(user.uid);
                 let week = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
                 let timetable = ['one','two','three','four','five','six','seven','eight'];
+                let month = ['January','February','March','April','May','June','July','August','September','October','November','December'];
                 console.log(week[1]);
                 for(let j = 0; j < week.length;j++){
                     for(let i = 0; i < 8;i++){
@@ -67,6 +68,22 @@ db.settings({
                         });
                     }
                 }
+                //出席管理用
+                for(let j = 0; j < month.length;j++){
+                    for(let i = 1; i < 31;i++){
+                        const attendanceRef = db.collection('attendance_management').doc(user.uid).collection(month[j]).doc('Day' + i);
+                        attendanceRef.set({
+                            firstHour:'未入力',
+                            secondHour:'未入力',
+                            thirdHour:'未入力',
+                            fourthHour:'未入力',
+                            fifthHour:'未入力',
+                            sixthHour:'未入力',
+                            sevenHour:'未入力',
+                            eightHour:'未入力',
+                        });
+                    }
+                }
                 userRef.set({
                     Name:user.displayName,
                 })
@@ -81,7 +98,7 @@ db.settings({
             };
 
             } catch (err) {
-            console.log(`Error: ${JSON.stringify(err)}`);
+
             }
             })();
     }else{

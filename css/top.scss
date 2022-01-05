@@ -9,13 +9,39 @@ header{
     font-family: 'Readex Pro', sans-serif;
 } 
 
+.logo{
+    background: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+}
+
+.logo_start{
+	position: fixed;
+    z-index: 9000;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+}
+
+#zoomIn{
+    animation: animationZoom1 5s ease-in-out forwards;
+}
+
+@keyframes animationZoom1 {
+    100% { transform:scale(1.1)} 
+}
+
 .login{
     text-align: center;
     margin: 3% 0;
     &_button{
         width: 600px;
         height: 50px;
-        background: rgba(144,238,144,0.6);
+        background:rgba(154,205,50,0.6);
         border: 2px #666 solid;
     }
 
@@ -58,11 +84,11 @@ header{
     &_content{
         color: #666;
         width: 300px;
-        height: 180px;
+        height: 220px;
         padding: 20px;
         margin: 0 3%;
         border: solid 2px #666;
-        background: rgba(144,238,144,0.6);
+        background: rgba(154,205,50,0.6);
         display: inline-block;
         vertical-align: top;
         border-radius: 10px;
@@ -76,8 +102,9 @@ header{
         }
 
         p{
-            font-size: 12px;
+            font-size: 15px;
             pointer-events: none;
+            color: white;
         }
 
         a{

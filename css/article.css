@@ -30,6 +30,28 @@ header {
     color: #666;
     font-size: 15px; }
 
+.logo {
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 9000; }
+
+.logo_start {
+  position: fixed;
+  z-index: 9000;
+  width: 100%;
+  height: 100vh;
+  left: 0; }
+
+#zoomIn {
+  animation: animationZoom1 5s ease-in-out forwards; }
+
+@keyframes animationZoom1 {
+  100% {
+    transform: scale(1.1); } }
 #zoom {
   text-align: center;
   padding-top: 2%;
@@ -66,6 +88,54 @@ header {
       margin: 10px 0; }
     #zoom .js-modal1 #zoomURL_input {
       width: 300px; }
+
+.bbs {
+  text-align: center;
+  padding-top: 2%;
+  padding-left: 20%;
+  padding-right: 20%; }
+  .bbs h1 {
+    margin: 3%; }
+  .bbs button {
+    width: 100px;
+    height: 30px;
+    margin: 0 20px;
+    font-size: 15px; }
+  .bbs_titles {
+    display: flex;
+    justify-content: center;
+    position: relative; }
+    .bbs_titles_buttons {
+      position: absolute;
+      right: 0; }
+      .bbs_titles_buttons p {
+        font-size: 10px; }
+  .bbs .js-modal1 {
+    font-size: 15px; }
+    .bbs .js-modal1 h2 {
+      font-size: 20px;
+      margin: 10px 0; }
+    .bbs .js-modal1 .edit {
+      margin: 10px 0; }
+      .bbs .js-modal1 .edit label, .bbs .js-modal1 .edit span {
+        vertical-align: top; }
+    .bbs .js-modal1 #bbs_content {
+      width: 300px; }
+  .bbs .articles {
+    border: solid 3px #666;
+    padding: 2%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    margin: 5% 0;
+    border-radius: 10px; }
+    .bbs .articles h2 {
+      font-size: 30px;
+      margin: 1% 0; }
+    .bbs .articles_date {
+      font-size: 15px;
+      text-align: right; }
+    .bbs .articles_content {
+      font-size: 15px;
+      margin: 5% 20px; }
 
 .modal {
   display: none;

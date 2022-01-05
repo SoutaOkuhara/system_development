@@ -39,6 +39,32 @@ header{
     }
 }
 
+.logo{
+    background: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+}
+
+.logo_start{
+	position: fixed;
+    z-index: 9000;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+}
+
+#zoomIn{
+    animation: animationZoom1 5s ease-in-out forwards;
+}
+
+@keyframes animationZoom1 {
+    100% { transform:scale(1.1)} 
+}
+
 
 #zoom{
     text-align: center;
@@ -96,6 +122,80 @@ header{
 
         #zoomURL_input{
             width: 300px;
+        }
+    }
+}
+
+.bbs{
+    text-align: center;
+    padding-top: 2%;
+    padding-left: 20%;
+    padding-right: 20%;
+
+    h1{
+        margin: 3%;
+    }
+
+    button{
+        width: 100px;
+        height: 30px;
+        margin: 0 20px;
+        font-size: 15px;
+    }
+
+    &_titles{
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        &_buttons{
+            position: absolute;  // 追記
+            right: 0;  
+            p{
+                font-size: 10px;
+            }
+        }
+    }
+
+    .js-modal1{
+        font-size: 15px;
+        h2{
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .edit{
+            margin: 10px 0;
+            label,span{
+                vertical-align: top;
+            }
+        }
+
+        #bbs_content{
+            width: 300px;
+        }
+    }
+
+    .articles{
+        border: solid 3px #666;
+        padding: 2%;
+        box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+        margin: 5% 0;
+        border-radius: 10px;
+
+        h2{
+            font-size: 30px;
+            margin: 1% 0;
+        }
+
+        &_date{
+            font-size: 15px;
+            text-align: right;
+        }
+
+        &_content{
+            font-size: 15px;
+            margin: 5% 20px;
         }
     }
 }

@@ -168,7 +168,6 @@ function HomeworkUpdate(){
                         priority:priority,
                         checkbox:checkbox
                     });
-                    console.log('ok');
                     var collectAlert = document.getElementById('collectAlert');
                     collectAlert.innerHTML = '<div class="alert alert-success" role="alert">編集完了!リロードします。</div>';
                     setTimeout("location.reload()",2000);

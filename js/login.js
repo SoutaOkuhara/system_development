@@ -70,7 +70,7 @@ db.settings({
                 }
                 //出席管理用
                 for(let j = 0; j < month.length;j++){
-                    for(let i = 1; i < 31;i++){
+                    for(let i = 1; i < 32;i++){
                         const attendanceRef = db.collection('attendance_management').doc(user.uid).collection(month[j]).doc('Day' + i);
                         attendanceRef.set({
                             firstHour:'未入力',

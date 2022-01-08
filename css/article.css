@@ -156,6 +156,8 @@ header {
     max-width: 600px;
     margin: 0 auto;
     color: #666; }
+  .attendance_management .wrapper a {
+    color: #666; }
   .attendance_management #header {
     text-align: center;
     font-size: 24px;
@@ -182,8 +184,15 @@ header {
   .attendance_management td.disabled {
     color: #ccc; }
   .attendance_management td.today {
-    background-color: #D65E72;
+    background-color: #D65E72; }
+    .attendance_management td.today button {
+      background-color: #D65E72;
+      color: #fff;
+      border: solid 2px #fff; }
+  .attendance_management td.today a {
     color: #fff; }
+  .attendance_management button {
+    border: solid 2px #666; }
   .attendance_management #next-prev-button {
     position: relative; }
   .attendance_management #next-prev-button button {
@@ -202,6 +211,19 @@ header {
     float: left; }
   .attendance_management #next {
     float: right; }
+  .attendance_management #attendance_edit {
+    margin: 10% 0; }
+    .attendance_management #attendance_edit #count {
+      font-size: 15px; }
+    .attendance_management #attendance_edit button {
+      margin-top: 5%; }
+  .attendance_management .modal label {
+    font-size: 15px; }
+  .attendance_management .modal input {
+    font-size: 20px;
+    -moz-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4); }
 
 .modal {
   display: none;

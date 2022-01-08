@@ -60,30 +60,30 @@
             <div class="modal js-modal1">
                 <div class="modal__bg js-modal-close1"></div>
                 <div class="modal__content">
-                    <h2>掲示板追加</h2>
-                    <div class="edit">
-                        <label for="">タイトル:</label>
-                        <span class="badge badge-danger">必須</span>
-                        <input type="text" name="" id="bbs_title">
-                    </div>
-                    <br>
-                    <div class="edit">
-                        <label for="">内容:</label>
-                        <span class="badge badge-danger">必須</span>
-                        <textarea name="" id="bbs_content" rows="5" col="100"></textarea>     
-                    </div>
-                    </form>
-                    <br>
-                    <div id="getWeekAlert">
-                        <!-- 曜日未記入時の際のアラートを表示 -->
-                    </div>
-                    <div id="getTimeAlert">
-                        <!-- 時間未記入時の際のアラートを表示 -->
-                    </div>
+                    <h2><span id="attendance_month"></span>月<span id="attendance_day"></span>日の投稿可否入力</h2>
+                    <!-- 詳細テーブル -->
+                    <div id="attendancedetail_input"></div>
+                    <label for="all"><input type="checkbox" name="allChecked" id="all">全選択</label><br>
+                    <label for="">1時間目</label>
+                    <input type="checkbox" name="attend_input" id="attend_first">
+                    <label for="">2時間目</label>
+                    <input type="checkbox" name="attend_input" id="attend_second">
+                    <label for="">3時間目</label>
+                    <input type="checkbox" name="attend_input" id="attend_third">
+                    <label for="">4時間目</label>
+                    <input type="checkbox" name="attend_input" id="attend_fourth">
+                    <label for="">5時間目</label>
+                    <input type="checkbox" name="attend_input" id="attend_fifth">
+                    <label for="">6時間目</label>
+                    <input type="checkbox" name="attend_input" id="attend_sixth">
+                    <label for="">7時間目</label>
+                    <input type="checkbox" name="attend_input" id="attend_seventh">
+                    <label for="">8時間目</label>
+                    <input type="checkbox" name="attend_input" id="attend_eighth"><br>
                     <div id="collectAlert">
                         <!-- 編集完了のAlert -->
                     </div>
-                    <button type="submit" class="btn btn-success" onclick="bbsUpdate()">送信する</button>
+                    <button type="submit" class="btn btn-success" onclick="attendance_manage_Update()">送信する</button>
                     <a class="js-modal-close1" href=""><button class="btn btn-outline-info">閉じる</button></a>
                 </div>
             </div>  
@@ -99,6 +99,12 @@
             
                 <!-- カレンダー -->
                 <div id="calendar"></div>
+                <!-- 編集画面 -->
+                <div id="attendance_edit">
+                    <div id="count">日別出席詳細</div>
+                    <!-- 詳細テーブル -->
+                    <div id="attendancedetail"></div>
+                </div>
             </div>
     </div> 
     <div class="adsense_left">

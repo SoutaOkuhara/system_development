@@ -216,6 +216,10 @@ header{
         margin: 0 auto;
         color: #666;
     }
+
+    .wrapper a{
+        color: #666;
+    }
     #header {
         text-align: center;
         font-size: 24px;
@@ -251,13 +255,25 @@ header{
         color: blue;
     }
     /*前後月の日付*/
-    td.disabled {
+    td.disabled{
         color: #ccc;
     }
     /*本日*/
     td.today {
         background-color: #D65E72;
+
+        button{
+            background-color: #D65E72;
+            color: #fff;
+            border: solid 2px #fff;
+        }
+    }
+    td.today a{
         color: #fff;
+    }
+
+    button{
+        border: solid 2px #666;
     }
 
     /*ボタン*/
@@ -283,6 +299,30 @@ header{
     }
     #next {
         float: right;
+    }
+
+    #attendance_edit{
+        margin: 10% 0;
+        #count{
+            font-size: 15px;
+        }
+
+        button{
+            margin-top: 5%;
+        }
+    }
+
+    .modal{
+        label{
+            font-size: 15px;
+        }
+    
+        input{
+            font-size: 20px;
+            -moz-transform:		scale(1.4);
+            -webkit-transform:	scale(1.4);
+            transform:		scale(1.4);
+        }
     }
 }
 

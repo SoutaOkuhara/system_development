@@ -164,8 +164,10 @@ function ZoomURLUpdate(){
     var Subject_input = document.getElementById('subject_input').value;
     var weekalert = document.getElementById('getWeekAlert');
     var Timealert = document.getElementById('getTimeAlert');
+    var ZoomURLalert = document.getElementById('getzoomAlert');
     weekalert.textContent = "";
     Timealert.textContent = "";
+    ZoomURLalert.textContent = "";
     var isSend = true;
     if(week == ""){
         weekalert.innerHTML = '<div class="alert alert-danger" role="alert">曜日欄が未記入です。</div>';
@@ -173,6 +175,11 @@ function ZoomURLUpdate(){
     }
     if(time == ""){
         Timealert.innerHTML = '<div class="alert alert-danger" role="alert">時間欄が未記入です。</div>';
+        isSend = false;
+    }
+
+    if(ZoomURL_input != '/^http' || ZoomURL_input != '/^https'){
+        ZoomURLalert.innerHTML = '<div class="alert alert-danger" role="alert">URL以外は入力できません。</div>';
         isSend = false;
     }
 

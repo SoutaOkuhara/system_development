@@ -405,6 +405,17 @@ img{
 //プライバシーポリシー
 .privacyPolicy{
 
+    .header{
+        font-size: 30px;
+        text-align: center;
+        margin-top: 0;
+        background: #dcdcdc;
+        padding: 2% 0;
+        font-family: 'Readex Pro', sans-serif;
+        width: 100%;
+        z-index: 5;
+    } 
+
     .back{
         text-align: center;
         margin-top: 20px;

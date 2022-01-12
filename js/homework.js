@@ -163,7 +163,7 @@ function HomeworkUpdate(){
 
                     const updateHomeworkDB = await db.collection('Homework').doc(user.uid).collection(week).doc(time);
                     updateHomeworkDB.update({
-                        Subject:homework_content,
+                        Content:homework_content,
                         submission_period:submission_period,
                         priority:priority,
                         checkbox:checkbox

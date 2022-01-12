@@ -9,6 +9,9 @@ firebase.auth().onAuthStateChanged(user => {
                 if(ClassId != undefined){
                     var className = '<p>在籍先：' + ClassDB.get('title') + '</p>';
                     document.getElementById('className').innerHTML = className;
+                }else{
+                    document.getElementById('className').innerHTML = '<p>クラスに在籍していません。<br>担当教諭に所定クラス内への追加を申請してください。</p>';
+                    document.querySelector('.js-modal-open1').style.display = 'none';
                 }
 
                 //投稿の表示

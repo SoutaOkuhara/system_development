@@ -103,7 +103,7 @@ db.settings({
             })();
     }else{
         var uiConfig = {
-        signInSuccessUrl:'zoomURL.html',
+        signInSuccessUrl:'http://destiny-souta.girly.jp/studeasy/',
         // 利用する認証機能
         signInOptions: [{
             provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,  //メール認証
@@ -132,7 +132,7 @@ $(function(){
                 .signOut()
                 .then(() => {
                     console.log('ログアウトしました');
-                    setTimeout("location.reload()",500);
+                    document.location.href = "http://destiny-souta.girly.jp/studeasy/";
                 })
                 .catch((error) => {
                     console.log(`ログアウト時にエラーが発生しました (${error})`);
